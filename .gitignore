@@ -1,0 +1,9 @@
+
+# Author  Martin Dubois, P.Eng.
+# Product C-Sharp
+# File    .gitignore
+
+/.vs
+
+bin/
+obj/
