@@ -16,6 +16,13 @@ namespace DP_Command
         {
             InitializeComponent();
 
+            cColor_Black.Enabled = false;
+
+            cSize_Normal.Enabled = false;
+
+            cRedo.Enabled = false;
+            cUndo.Enabled = false;
+
             mNormalSize = cLabel.Font.Size;
         }
 
@@ -37,6 +44,18 @@ namespace DP_Command
         private void cColor_Red_Click(object sender, EventArgs e)
         {
             cLabel.ForeColor = Color.Red;
+        }
+
+        private void cLabel_FontChanged(object sender, EventArgs e)
+        {
+            cSize_Normal.Enabled = mNormalSize != cLabel.Font.Size;
+        }
+
+        private void cLabel_ForeColorChanged(object sender, EventArgs e)
+        {
+            cColor_Black.Enabled = Color.Black.ToArgb() != cLabel.ForeColor.ToArgb();
+            cColor_Green.Enabled = Color.Green.ToArgb() != cLabel.ForeColor.ToArgb();
+            cColor_Red  .Enabled = Color.Red  .ToArgb() != cLabel.ForeColor.ToArgb();
         }
 
         private void cSize_Larger_Click(object sender, EventArgs e)

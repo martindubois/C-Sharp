@@ -136,6 +136,8 @@ namespace DP_Command
             this.cLabel.Size = new System.Drawing.Size(124, 25);
             this.cLabel.TabIndex = 8;
             this.cLabel.Text = "Hello, World!";
+            this.cLabel.FontChanged += new System.EventHandler(this.cLabel_FontChanged);
+            this.cLabel.ForeColorChanged += new System.EventHandler(this.cLabel_ForeColorChanged);
             // 
             // Form1
             // 

@@ -1,0 +1,38 @@
+
+Author  Martin Dubois, P.Eng
+Product C-Sharp
+File    DP-Command/_DocDev/Test.txt
+
+Developper          _________________________________________________________
+
+Date and time       20 ______ - ______ - ______               ______ : ______
+
+Configuration       [ ] Debug                                     [ ] Release
+
+[ ] Lanch "DP-Command.exe"
+	- Verify the "Black", "Normal", "Undo" and "Redo" buttons are disabled
+	- Verify the "Green", "Red", "Larger" and "Smaller" button are enabled
+	- Verify the "Hello, World!" text is black
+	- Click "Green"
+	- Verify the "Hello, World!" text is green
+	- Verify the "Black" buttons are enabled
+	- Verify the "Green" button is disabled
+	- Click "Larger"
+	- Verify the "Hello, World!" text is larger
+	- Verify the "Normal" buttons is enabled
+	- Click "Normal"
+	- Verify the "Hello, World!" text is normal
+	- Verify the "Normal" buttons is disabled
+	- Click "Smaller"
+	- Verify the "Hello, World!" text is smaller
+	- Click "Red"
+	- Verify the "Hello, World!" text is red
+	- Verify the "Red" button is disabled
+	- Click "Black"
+	- Verify the "Hello, World!" text is black
+	- Verify the "Red" button is enabled
+	- Close DP-Command.exe
+
+Time and duration   ______ : ______           ______ hours and ______ minutes
+
+Signature           _________________________________________________________
