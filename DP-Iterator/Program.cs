@@ -6,18 +6,19 @@
 
 #define ENUMERATOR
 
-#define LIST
 // #define LINKED_LIST
+#define LIST
 
 using System;
 using System.Collections.Generic;
-
-#if LIST
-    using Container = System.Collections.Generic.List<double>;
-#endif
+using System.Diagnostics;
 
 #if LINKED_LIST
     using Container = System.Collections.Generic.LinkedList<double>;
+#endif
+
+#if LIST
+    using Container = System.Collections.Generic.List<double>;
 #endif
 
 namespace DP_Iterator
@@ -28,10 +29,9 @@ namespace DP_Iterator
 
         static void Main(string[] args)
         {
-            System.Diagnostics.Stopwatch lWatch = System.Diagnostics.Stopwatch.StartNew();
+            Stopwatch lWatch = Stopwatch.StartNew();
 
-            // LinkedList<double> lValues = new LinkedList<double>();
-            List<double> lValues = new List<double>();
+            Container lValues = new Container();
 
             Random lRand = new Random();
 
@@ -41,31 +41,40 @@ namespace DP_Iterator
             {
                 lVal = lRand.NextDouble();
 
-                // lValues.AddLast(lVal);
+#if LINKED_LIST
+                lValues.AddLast(lVal);
+#endif
+
+#if LIST
                 lValues.Add(lVal);
+#endif
             }
 
             double lMax;
             double lMin;
             double lSum;
 
-            // LinkedList<double>.Enumerator lEnum = lValues.GetEnumerator();
-            List<double>.Enumerator lEnum = lValues.GetEnumerator();
+#if ENUMERATOR
+            Container.Enumerator lEnum = lValues.GetEnumerator();
 
-            // lVal = lEnum.Current;
+            lVal = lEnum.Current;
+#else
             lVal = lValues[0];
+#endif
 
             lMax = lVal;
             lMin = lVal;
             lSum = lVal;
 
-            // while (lEnum.MoveNext())
-            // {
-            //    lVal = lEnum.Current;
-
+#if ENUMERATOR
+            while (lEnum.MoveNext())
+            {
+                lVal = lEnum.Current;
+#else
             for (int i = 1; i < VALUE_COUNT; i ++)
             {
                 lVal = lValues[i];
+#endif
 
                 if (lMax < lVal)
                 {
