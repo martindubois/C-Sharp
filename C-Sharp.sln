@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TR-Calculator", "TR-Calcula
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TT-Calculator", "TT-Calculator\TT-Calculator.csproj", "{52DDAEAD-1309-4030-9BC2-8063420EBE26}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TT-ImageProc", "TT-ImageProc\TT-ImageProc.csproj", "{88455F8B-A5BB-4FE4-AB97-3B5BFF50C9F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{52DDAEAD-1309-4030-9BC2-8063420EBE26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52DDAEAD-1309-4030-9BC2-8063420EBE26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52DDAEAD-1309-4030-9BC2-8063420EBE26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88455F8B-A5BB-4FE4-AB97-3B5BFF50C9F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88455F8B-A5BB-4FE4-AB97-3B5BFF50C9F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88455F8B-A5BB-4FE4-AB97-3B5BFF50C9F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88455F8B-A5BB-4FE4-AB97-3B5BFF50C9F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
