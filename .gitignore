@@ -3,7 +3,8 @@
 # Product C-Sharp
 # File    .gitignore
 
-/.vs
+/.vs/
+/packages/
 
 bin/
 obj/

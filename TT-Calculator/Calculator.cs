@@ -9,7 +9,7 @@ using System.Collections.Generic;
 namespace TT_Calculator
 {
 
-    class Calculator
+    public class Calculator
     {
 
         public Calculator()
