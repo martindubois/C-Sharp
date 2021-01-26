@@ -81,18 +81,6 @@ namespace DP_Command
             cColor_Red  .Enabled = Color.Red  .ToArgb() != cLabel.ForeColor.ToArgb();
         }
 
-        private void cLabel_FontChanged(object sender, EventArgs e)
-        {
-            cSize_Normal.Enabled = mNormalSize != cLabel.Font.Size;
-        }
-
-        private void cLabel_ForeColorChanged(object sender, EventArgs e)
-        {
-            cColor_Black.Enabled = Color.Black.ToArgb() != cLabel.ForeColor.ToArgb();
-            cColor_Green.Enabled = Color.Green.ToArgb() != cLabel.ForeColor.ToArgb();
-            cColor_Red  .Enabled = Color.Red  .ToArgb() != cLabel.ForeColor.ToArgb();
-        }
-
         private void cSize_Larger_Click(object sender, EventArgs e)
         {
             Command_Add(new Command_Size_Larger(cLabel));
