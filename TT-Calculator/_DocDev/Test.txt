@@ -1,0 +1,41 @@
+
+Author  Martin Dubois, P.Eng
+Product C-Sharp
+File    TT-Calculator/_DocDev/Test.txt
+
+Developper          _________________________________________________________
+
+Date and time       20 ______ - ______ - ______               ______ : ______
+
+Configuration       [ ] Debug                                     [ ] Release
+
+[ ] Lanch "TT-Calculator.exe"
+	- Verify all button except "Reset" are disabled
+	- Click "Reset"
+	- Verify the output box displayed "Reset"
+	- Enter "1" in the value box
+	- Verify the "Push" button is enabled
+	- Click "Push"
+	- Verify the ouput box displayed the pushed value
+	- Verify the "Push" button is disabled
+	- Enter "2" in the value box
+	- Click "Push"
+	- Verify the operator buttons are enabled
+	- Click "+"
+	- Verify the output box displayed "+"
+	- Verify the operator button are disabled
+	- Enter "1.5" in the value box
+	- Click "Push"
+	- Click "/"
+	- Enter "3" in the value box
+	- Click "Push"
+	- Click "*"
+	- Enter "4" in the value box
+	- Click "Push"
+	- Click "-"
+	- Verify the last result is 2
+	- Exit
+
+Time and duration   ______ : ______           ______ hours and ______ minutes
+
+Signature           _________________________________________________________

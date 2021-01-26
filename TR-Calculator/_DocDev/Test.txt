@@ -1,0 +1,31 @@
+
+Author  Martin Dubois, P.Eng
+Product C-Sharp
+File    TR-Calculator/_DocDev/Test.txt
+
+Developper          _________________________________________________________
+
+Date and time       20 ______ - ______ - ______               ______ : ______
+
+Configuration       [ ] Debug                                     [ ] Release
+
+[ ] Lanch "TR-Calculator.exe"
+		Exit
+[ ] Lanch "TR-Calculator.exe"
+		Reset
+		1
+		2
+		+
+		1.5
+		/
+		3
+		*
+		4
+		-
+		Exit
+[ ] Verify the last result is 2
+
+
+Time and duration   ______ : ______           ______ hours and ______ minutes
+
+Signature           _________________________________________________________

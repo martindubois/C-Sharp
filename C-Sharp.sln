@@ -5,7 +5,13 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DP-Command", "DP-Command\DP-Command.csproj", "{1CF58B63-C4F2-4A36-85E3-5F366EA7D64B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D4E5B3B3-AC71-4635-BB4B-0F7DC09B9B7C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DP-Iterator", "DP-Iterator\DP-Iterator.csproj", "{2B5549C8-B4EC-4E58-8901-DA09B9C4AE34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TR-Calculator", "TR-Calculator\TR-Calculator.csproj", "{309EB63D-BFF4-4EFA-9938-1CD85374FA01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TT-Calculator", "TT-Calculator\TT-Calculator.csproj", "{52DDAEAD-1309-4030-9BC2-8063420EBE26}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1568B3DF-502D-40DD-92D6-7AA1BFE55F67}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 	EndProjectSection
@@ -20,6 +26,18 @@ Global
 		{1CF58B63-C4F2-4A36-85E3-5F366EA7D64B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CF58B63-C4F2-4A36-85E3-5F366EA7D64B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CF58B63-C4F2-4A36-85E3-5F366EA7D64B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B5549C8-B4EC-4E58-8901-DA09B9C4AE34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B5549C8-B4EC-4E58-8901-DA09B9C4AE34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B5549C8-B4EC-4E58-8901-DA09B9C4AE34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B5549C8-B4EC-4E58-8901-DA09B9C4AE34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{309EB63D-BFF4-4EFA-9938-1CD85374FA01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{309EB63D-BFF4-4EFA-9938-1CD85374FA01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{309EB63D-BFF4-4EFA-9938-1CD85374FA01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{309EB63D-BFF4-4EFA-9938-1CD85374FA01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52DDAEAD-1309-4030-9BC2-8063420EBE26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52DDAEAD-1309-4030-9BC2-8063420EBE26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52DDAEAD-1309-4030-9BC2-8063420EBE26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52DDAEAD-1309-4030-9BC2-8063420EBE26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
