@@ -16,15 +16,31 @@ namespace TT_ImageProc
         {
             InitializeComponent();
 
+            cSavePicture.Enabled = false;
+
             mCamera    = new Camera_USB();
             mProcessor = new Processor();
 
             mProcessor.Camera = mCamera;
         }
 
+        private void cSavePicture_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog lDlg = new SaveFileDialog();
+
+            lDlg.Filter = "png file (*.png)|*.png";
+
+            if (DialogResult.OK == lDlg.ShowDialog())
+            {
+                cPictureBox.Image.Save(lDlg.FileName);
+            }
+        }
+
         private void cTakePicture_Click(object sender, EventArgs e)
         {
             cPictureBox.Image = mProcessor.TakePicture(cPictureBox.Size.Width, cPictureBox.Size.Height);
+
+            cSavePicture.Enabled = true;
         }
 
         private ICamera   mCamera;
