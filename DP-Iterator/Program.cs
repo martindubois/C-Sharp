@@ -91,18 +91,23 @@ namespace DP_Iterator
 
             long lElapsed_ms = lWatch.ElapsedMilliseconds;
 
-            Console.Write("Elapsed time : ");
-            Console.Write(lElapsed_ms);
-            Console.WriteLine(" ms");
-
-            Console.Write(lMin);
-            Console.Write(" -> ");
-            Console.Write(lSum / 100000.0);
-            Console.Write(" -> ");
-            Console.WriteLine(lMax);
+            DisplayResults(lElapsed_ms, lMin, lSum, lMax);
 
             Console.WriteLine("Press Enter to exit");
             Console.ReadLine();
+        }
+
+        static void DisplayResults(long aElapsed_ms, double aMin, double aSum, double aMax)
+        {
+            Console.Write("Elapsed time : ");
+            Console.Write(aElapsed_ms);
+            Console.WriteLine(" ms");
+
+            Console.Write(aMin);
+            Console.Write(" -> ");
+            Console.Write(aSum / VALUE_COUNT);
+            Console.Write(" -> ");
+            Console.WriteLine(aMax);
         }
     }
 }
