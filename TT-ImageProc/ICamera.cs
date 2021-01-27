@@ -8,10 +8,11 @@ using System.Drawing;
 
 namespace TT_ImageProc
 {
-    interface ICamera
+    public interface ICamera
     {
 
         Image TakePicture();
 
     }
+
 }

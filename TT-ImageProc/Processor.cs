@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace TT_ImageProc
 {
-    class Processor
+    public class Processor
     {
         public ICamera Camera
         {
