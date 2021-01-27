@@ -10,7 +10,7 @@ using System;
 namespace TT_Calculator_Test
 {
     [TestClass]
-    public class UnitTest1
+    public class Calculator
     {
         [TestMethod]
         public void Test_Add()
