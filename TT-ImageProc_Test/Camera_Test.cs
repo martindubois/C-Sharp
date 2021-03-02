@@ -4,8 +4,6 @@
 // Product C-Sharp
 // File    TT-ImageProc_Test/Camera_Test.cs
 
-using System;
-using System.Collections.Generic;
 using System.Drawing;
 
 using TT_ImageProc;
@@ -15,29 +13,20 @@ namespace TT_ImageProc_Test
     class Camera_Test : ICamera
     {
 
-        Image ICamera.TakePicture()
+        public Image Image
         {
-            String lCD = System.IO.Directory.GetCurrentDirectory();
-
-            Image lResult = Image.FromFile(mImages[mImageIndex % mImages.Count]);
-
-            mImageIndex++;
-
-            return lResult;
+            set
+            {
+                mImage = value;
+            }
         }
 
-        private int mImageIndex = 0;
-
-        private List<String> mImages = new List<String>
+        Image ICamera.TakePicture()
         {
-            "..\\..\\Images\\00.jpg",
-            "..\\..\\Images\\01.jpg",
-            "..\\..\\Images\\02.jpg",
-            "..\\..\\Images\\03.png",
-            "..\\..\\Images\\04.png",
-            "..\\..\\Images\\05.jpg",
-            "..\\..\\Images\\06.jpg",
-        };
+            return mImage;
+        }
+
+        public Image mImage;
 
     }
 

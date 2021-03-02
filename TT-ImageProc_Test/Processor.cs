@@ -5,7 +5,9 @@
 // File    TT-ImageProc_Test/Processor.cs
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace TT_ImageProc_Test
@@ -14,9 +16,28 @@ namespace TT_ImageProc_Test
     public class Processor
     {
         [TestMethod]
-        public void Test_TakePicture()
+        public void Test_TakePicture_0()
         {
-            TT_ImageProc.ICamera lC = new Camera_Test();
+            Mock<TT_ImageProc.ICamera> lC = new Mock<TT_ImageProc.ICamera>();
+
+            TT_ImageProc.Processor lP = new TT_ImageProc.Processor();
+
+            lP.Camera = lC.Object;
+
+            for (int i = 0; i < 7; i ++)
+            {
+                lC.Setup(p => p.TakePicture()).Returns(Image.FromFile(mImages[i]));
+
+                Image lI = lP.TakePicture(128, 128);
+
+                VerifyImage(lI, i);
+            }
+        }
+
+        [TestMethod]
+        public void Test_TakePicture_1()
+        {
+            Camera_Test lC = new Camera_Test();
 
             TT_ImageProc.Processor lP = new TT_ImageProc.Processor();
 
@@ -24,19 +45,11 @@ namespace TT_ImageProc_Test
 
             for (int i = 0; i < 7; i ++)
             {
+                lC.Image = Image.FromFile(mImages[i]);
+
                 Image lI = lP.TakePicture(128, 128);
 
-                String lName = "..\\..\\Images\\" + i.ToString() + "_R0.png";
-                if (System.IO.File.Exists(lName))
-                {
-                    Image lR = Image.FromFile(lName);
-
-                    Assert.IsTrue(CompareImage(lI, lR));
-                }
-                else
-                {
-                    lI.Save(lName);
-                }
+                VerifyImage(lI, i);
             }
         }
 
@@ -63,5 +76,32 @@ namespace TT_ImageProc_Test
 
             return true;
         }
+
+        private static void VerifyImage(Image aImage, int aIndex)
+        {
+            String lName = "..\\..\\Images\\" + aIndex.ToString() + "_R0.png";
+            if (System.IO.File.Exists(lName))
+            {
+                Image lR = Image.FromFile(lName);
+
+                Assert.IsTrue(CompareImage(aImage, lR));
+            }
+            else
+            {
+                aImage.Save(lName);
+            }
+        }
+
+        private List<String> mImages = new List<String>
+        {
+            "..\\..\\Images\\00.jpg",
+            "..\\..\\Images\\01.jpg",
+            "..\\..\\Images\\02.jpg",
+            "..\\..\\Images\\03.png",
+            "..\\..\\Images\\04.png",
+            "..\\..\\Images\\05.jpg",
+            "..\\..\\Images\\06.jpg",
+        };
+
     }
 }
