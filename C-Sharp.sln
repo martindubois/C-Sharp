@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TT-ImageProc", "TT-ImagePro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TT-ImageProc_Test", "TT-ImageProc_Test\TT-ImageProc_Test.csproj", "{4FC82408-EDB5-464F-8C6B-78BA05F59DA6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TR-CmdParser", "TR-CmdParser\TR-CmdParser.csproj", "{D454E20B-56C3-44E2-871C-E5BA3ABE9160}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{4FC82408-EDB5-464F-8C6B-78BA05F59DA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FC82408-EDB5-464F-8C6B-78BA05F59DA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FC82408-EDB5-464F-8C6B-78BA05F59DA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D454E20B-56C3-44E2-871C-E5BA3ABE9160}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D454E20B-56C3-44E2-871C-E5BA3ABE9160}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D454E20B-56C3-44E2-871C-E5BA3ABE9160}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D454E20B-56C3-44E2-871C-E5BA3ABE9160}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
