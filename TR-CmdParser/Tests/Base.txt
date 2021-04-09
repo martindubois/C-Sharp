@@ -1,0 +1,41 @@
+
+# Author  Martin Dubois, P.Eng.
+# License https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
+# Product C-Sharp
+# File    TR-CmdParser/Tests/Base.txt
+
+# Count [Word] ...
+
+Count
+Count Alpha
+Count Alpha Bravo
+
+# Echo [Message]
+
+Echo
+Echo Message
+
+# Help
+
+Help
+Help Useless
+
+# Info
+
+Info
+Info Useless
+
+# Reverse [Word] ...
+
+Reverse
+Reverse Alha
+Reverse Alpha Bravo
+Reverse Alpha Bravo Charlie
+
+# Invalid command
+
+Invalid
+
+# Exit - When test completed
+
+Exit

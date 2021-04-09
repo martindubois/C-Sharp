@@ -6,6 +6,8 @@
 /.vs/
 /packages/
 
+/TestOutput.txt
+
 bin/
 obj/
 packages/

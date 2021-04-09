@@ -2,117 +2,63 @@
 // Author  Martin Dubois, P.Eng.
 // License https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
 // Product C-Sharp
-// File    TR-Calculator/Program.cs
+// File    TR-CmdParser/Program.cs
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TR_CmdParser
 {
     class Program
     {
-        static String Ligne;
-
         static void Main(string[] args)
         {
-            bool Cont = true;
+            bool lContinue = true;
 
             do
             {
-                Console.WriteLine();
-                Console.Write("> ");
-
-                Ligne = Console.ReadLine();
-
-                bool OK = false;
-
-                if ("Compter" == Ligne)
+                // Do not display the command prompt when the commands are
+                // read from a file.
+                if (!Console.IsInputRedirected)
                 {
-                    Compter(Ligne);
-                    OK = true;
+                    Console.WriteLine();
+                    Console.Write("> ");
                 }
 
-                if ("Echo" == Ligne)
-                {
-                    Echo(Ligne);
-                    OK = true;
-                }
+                String lLine = Console.ReadLine();
 
-                if ("Exit" == Ligne)
+                // Ignore empty lines and comments
+                if ((0 < lLine.Length) && ('#' != lLine[0]))
                 {
-                    Cont = false;
-                    OK = true;
-                }
-
-                if ("Help" == Ligne)
-                {
-                    Help();
-                    OK = true;
-                }
-
-                if ("Help" == Ligne)
-                {
-                    Info();
-                    OK = true;
-                }
-
-                if (!OK)
-                {
-                    Console.WriteLine("Commande invalide");
+                    String[] lParts = lLine.Split();
+                    if (0 < lParts.Length)
+                    {
+                        if      ("Count"   == lParts[0]) { Processor.Count(lParts); }
+                        else if ("Echo"    == lParts[0]) { Processor.Echo(lParts); }
+                        else if ("Exit"    == lParts[0]) { lContinue = false; }
+                        else if ("Help"    == lParts[0]) { Help(); }
+                        else if ("Info"    == lParts[0]) { Info(); }
+                        else if ("Reverse" == lParts[0]) { Processor.Reverse(lParts); }
+                        else { Console.WriteLine("Commande invalide"); }
+                    }
                 }
             }
-            while (Cont);
-        }
-
-        static void Compter(String Ligne)
-        {
-            String[] Words = Ligne.Substring(8).Split();
-
-            for (int i = 0; i < Words.Length; i++)
-            {
-                Console.Write(Words[i].Length);
-                Console.Write(" ");
-            }
-
-            Console.Write("\n");
-        }
-
-        static void Echo(String Ligne)
-        {
-            // Afficher l'argument!
-            Console.WriteLine(Ligne.Substring(5));
+            while (lContinue);
         }
 
         static void Help()
         {
-            Console.WriteLine("Compter [Word] ...   Compter les lettres dans les mots");
-            Console.WriteLine("Echo {Message}       Display the message");
-            Console.WriteLine("Exit                 Terminer l'execution");
-            Console.Write("Help                 Afficher l'aide\n");
-            Console.Write("Info                 Display the information\n");
-            Console.Write("Inverser [Mot] ...   Inverser l'ordre des mots\n");
+            Console.WriteLine("Count [Word] ...     Count letter in words");
+            Console.WriteLine("Echo [Message]       Echo the message");
+            Console.WriteLine("Exit                 Exit the program");
+            Console.WriteLine("Help                 Display the command list");
+            Console.WriteLine("Info                 Display the information");
+            Console.WriteLine("Reverse [Word] ...   Reverse the words order");
         }
 
         static void Info()
         {
-            Console.WriteLine("Programme ecrit pour etre reviser par les etudiants du cours \"Methodes de developpement\".");
+            Console.WriteLine("This program has been modifier after the students of the \"Methods of developpement\" course reviewed it.");
         }
 
-        static void Inverser(String Ligne)
-        {
-            String [] lMots = Ligne.Substring(9).Split();
-
-            // for (int i = lMots.Length; i >= 0; i--)
-            for (int i = lMots.Length - 1; i >= 0; i --)
-            {
-                Console.Write(lMots[i]);
-                Console.Write(" ");
-            }
-
-            Console.WriteLine();
-        }
     }
 }

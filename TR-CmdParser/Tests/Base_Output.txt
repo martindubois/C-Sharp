@@ -1,0 +1,24 @@
+
+ 5
+ 5 5
+
+ Message
+Count [Word] ...     Count letter in words
+Echo [Message]       Echo the message
+Exit                 Exit the program
+Help                 Display the command list
+Info                 Display the information
+Reverse [Word] ...   Reverse the words order
+Count [Word] ...     Count letter in words
+Echo [Message]       Echo the message
+Exit                 Exit the program
+Help                 Display the command list
+Info                 Display the information
+Reverse [Word] ...   Reverse the words order
+This program has been modifier after the students of the "Methods of developpement" course reviewed it.
+This program has been modifier after the students of the "Methods of developpement" course reviewed it.
+
+ Alha
+ Bravo Alpha
+ Charlie Bravo Alpha
+Commande invalide
