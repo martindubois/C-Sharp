@@ -35,7 +35,7 @@ namespace TT_TicTacToc
         // Private
         /////////////////////////////////////////////////////////////////////
 
-        Button[] cButtons = new Button[9];
+        Button[] cButtons = new Button[Game.POSITION_QTY];
 
         uint mCount;
         Game mGame = new Game();
@@ -56,7 +56,7 @@ namespace TT_TicTacToc
             cButton_Computer.Enabled = true;
             cButton_Person  .Enabled = true;
 
-            for (uint i = 0; i < 9; i ++)
+            for (uint i = 0; i < Game.POSITION_QTY; i ++)
             {
                 cButtons[i].Enabled = false;
             }
@@ -66,7 +66,7 @@ namespace TT_TicTacToc
         {
             switch (mPlayer)
             {
-                case 1:
+                case Game.PLAYER_1:
                     cLabel_J1.ForeColor = Color.Green;
                     cLabel_J2.ForeColor = Color.Black;
                     cLabel_O.ForeColor = Color.Green;
@@ -75,7 +75,7 @@ namespace TT_TicTacToc
                     mPlayerLetter = "O";
                     break;
 
-                case 2:
+                case Game.PLAYER_2:
                     cLabel_J1.ForeColor = Color.Black;
                     cLabel_J2.ForeColor = Color.Blue;
                     cLabel_O.ForeColor = Color.Black;
@@ -94,7 +94,7 @@ namespace TT_TicTacToc
         {
             uint lResult;
 
-            for (lResult = 0; lResult < 9; lResult ++)
+            for (lResult = 0; lResult < Game.POSITION_QTY; lResult ++)
             {
                 if (cButtons[lResult] == aButton)
                 {
@@ -109,7 +109,7 @@ namespace TT_TicTacToc
 
         void Play(uint aButton)
         {
-            Debug.Assert(9 > aButton);
+            Debug.Assert(Game.POSITION_QTY > aButton);
 
             Debug.Assert(cButtons[aButton].Enabled);
 
@@ -120,8 +120,8 @@ namespace TT_TicTacToc
             {
                 switch (mPlayer)
                 {
-                    case 1: cText_Instruction.Text = "Le joueur 1 est le gagnant !"; break;
-                    case 2: cText_Instruction.Text = "Le joueur 2 est le gagnant !"; break;
+                    case Game.PLAYER_1: cText_Instruction.Text = "Le joueur 1 est le gagnant !"; break;
+                    case Game.PLAYER_2: cText_Instruction.Text = "Le joueur 2 est le gagnant !"; break;
 
                     default: Debug.Assert(false); break;
                 }
@@ -132,7 +132,7 @@ namespace TT_TicTacToc
             {
                 mCount++;
 
-                if (9 <= mCount)
+                if (Game.POSITION_QTY <= mCount)
                 {
                     cText_Instruction.Text = "Partie nulle !";
 
@@ -142,8 +142,8 @@ namespace TT_TicTacToc
                 {
                     switch (mPlayer)
                     {
-                        case 1: mPlayer = 2; break;
-                        case 2: mPlayer = 1; break;
+                        case Game.PLAYER_1: mPlayer = Game.PLAYER_2; break;
+                        case Game.PLAYER_2: mPlayer = Game.PLAYER_1; break;
 
                         default: Debug.Assert(false); break;
                     }
@@ -155,7 +155,7 @@ namespace TT_TicTacToc
 
         private void ResetButtons()
         {
-            for (uint i = 0; i < 9; i++)
+            for (uint i = 0; i < Game.POSITION_QTY; i++)
             {
                 Debug.Assert(!cButtons[i].Enabled);
 
@@ -168,7 +168,7 @@ namespace TT_TicTacToc
 
         private void OnTick(Object aObject, EventArgs aArgs)
         {
-            if (2 == mPlayer)
+            if (Game.PLAYER_2 == mPlayer)
             {
                 Play(Robot.Play(mGame));
             }
@@ -185,7 +185,7 @@ namespace TT_TicTacToc
             cButton_Person  .Enabled = false;
 
             mCount  = 0;
-            mPlayer = (uint)mRandom.Next(1, 3);
+            mPlayer = (uint)mRandom.Next((int)Game.PLAYER_1, (int)Game.PLAYER_2 + 1);
 
             mGame.Reset();
 
@@ -202,7 +202,7 @@ namespace TT_TicTacToc
         {
             uint lButton = FindButton(aSender);
 
-            Debug.Assert(9 > lButton);
+            Debug.Assert(Game.POSITION_QTY > lButton);
 
             Play(lButton);
         }

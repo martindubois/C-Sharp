@@ -13,19 +13,19 @@ namespace TT_TicTacToc
 
         public static uint Play(Game aGame)
         {
-            uint lResult = 9;
+            uint lResult = Game.POSITION_QTY;
             uint lSelected = 0;
 
-            for (uint i = 0; i < 9; i++)
+            for (uint i = 0; i < Game.POSITION_QTY; i++)
             {
-                if (0 == aGame.Get(i))
+                if (Game.NOT_PLAYED == aGame.Get(i))
                 {
                     uint lValue = 0;
 
-                    for (uint j = 0; j < 4; j++)
+                    for (uint j = 0; j < Game.LINE_PER_POSITION_MAX; j++)
                     {
                         uint lLine = Game.POSITION_TO_LINE[i, j];
-                        if (8 > lLine)
+                        if (Game.NO_LINE > lLine)
                         {
                             switch (Count(aGame, lLine, 2))
                             {
@@ -60,13 +60,13 @@ namespace TT_TicTacToc
 
         private static uint Count(Game aGame, uint aLine, uint aPlayer)
         {
-            Debug.Assert(8 > aLine);
-            Debug.Assert(1 <= aPlayer);
-            Debug.Assert(2 >= aPlayer);
+            Debug.Assert(Game.LINE_QTY > aLine);
+            Debug.Assert(Game.PLAYER_1 <= aPlayer);
+            Debug.Assert(Game.PLAYER_2 >= aPlayer);
 
             uint lResult = 0;
 
-            for (uint i = 0; i < 3; i ++)
+            for (uint i = 0; i < Game.LINE_LENGTH; i ++)
             {
                 if (aGame.Get(Game.LINES[aLine, i]) == aPlayer)
                 {
