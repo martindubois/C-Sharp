@@ -48,7 +48,7 @@ fc %BASE_OUTPUT_TXT% %OUTPUT_TXT%
 if ERRORLEVEL 1 (
     echo ERROR  fc %BASE_OUTPUT_TXT% %OUTPUT_TXT%  failed - %ERRORLEVEL%
     pause
-    eixt /B 40
+    exit /B 40
 )
 
 rem ===== End ===============================================================
